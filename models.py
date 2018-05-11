@@ -22,13 +22,21 @@ class CourseMultiproctoringState(models.Model):
     def __str__(self):
         return "<Course: {}>".format(self.course_id)
 
+    @classmethod
+    def get_service_names(cls, course_id):
+        query = cls.objects.filter(course_id=course_id)
+        if not len(query):
+            return []
+        instance = query.first()
+        return [x.name for x in instance.services.all()]
+
 
 class CourseProctoringService(models.Model):
     class Meta:
         app_label = "npoed_multiproctoring"
         unique_together = ("service", "course")
     service = models.ForeignKey(ProctoringService)
-    course = models.ForeignKey(CourseMultiproctoringState)
+    course = models.ForeignKey(CourseMultiproctoringState, related_name='services')
 
     def __str__(self):
         return "<{}:{}>".format(self.course, self.service)
