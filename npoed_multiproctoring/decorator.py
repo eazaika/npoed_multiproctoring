@@ -16,6 +16,7 @@ def build_create_xblock_info(func):
                 'proctoring_services': CourseMultiproctoringState.get_service_names(course_id),
                 'exam_proctoring_system': xblock.exam_proctoring_system,
             })
+            print("update PROCTORING SERVICES")
         return info
     return wrap
 

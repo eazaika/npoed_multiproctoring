@@ -1,7 +1,11 @@
+import logging
 from django.db import models
 from jsonfield.fields import JSONField
 from openedx.core.djangoapps.xmodule_django.models import CourseKeyField
+from xmodule.modulestore.django import modulestore
 
+
+log = logging.getLogger(__name__)
 
 class ProctoringService(models.Model):
     class Meta:
@@ -42,8 +46,20 @@ class CourseProctoringService(models.Model):
         return "<{}:{}>".format(self.course, self.service)
 
     def is_used_in_course(self):
-        # TODO: make sane
-        return self.service.name == 'dummy'
+        course_key = self.course.course_id
+        proctoring_name = self.service.name
+        store = modulestore()
+        if not store.has_course(course_key):
+            log.error("Multiproctoring is setup for non-existent course")
+            return False
+        sequentials = modulestore().get_items(
+            course_key,
+            qualifiers={'category': 'sequential'}
+        )
+        for x in sequentials:
+            if x.is_proctored_exam and getattr(x, 'exam_proctoring_system', None) == proctoring_name:
+                return True
+        return False
 
     @property
     def name(self):
