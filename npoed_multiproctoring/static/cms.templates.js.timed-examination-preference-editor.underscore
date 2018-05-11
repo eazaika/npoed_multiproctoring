@@ -58,43 +58,43 @@
             <div class="field-exam-review-rules-checkbox">
                 <p><input type="checkbox" id="web_sites"/>
                 <label class="label">
-                    <%- gettext('websites - разрешено пользоваться веб-сайтами (включая поисковые системы)') %>
+                    <%- gettext('websites - allowed to use web (search engines included)') %>
                 </label></p>
                 <p><input type="checkbox" id="books"/>
                 <label class="label">
-                    <%- gettext('books - разрешено пользоваться книгами') %>
+                    <%- gettext('books - allowd to use books') %>
                 </label></p>
                 <p><input type="checkbox" id="papersheet" checked="checked"/>
                 <label class="label">
-                    <%- gettext('paper - разрешено пользоваться бумагой для расчетов') %>
+                    <%- gettext('paper - allowed to use paper for calculations') %>
                 </label></p>
                 <p><input type="checkbox" id="messengers"/>
                 <label class="label">
-                    <%- gettext('messengers - разрешено пользоваться мессенджерами') %>
+                    <%- gettext('messengers - allowed to use messengers') %>
                 </label></p>
                 <p><input type="checkbox" id="calculator" checked="checked"/>
                 <label class="label">
-                    <%- gettext('calculator - разрешено пользоваться калькулятором, встроенным в ОС ') %>
+                    <%- gettext('calculator - allowed to OS calculator ') %>
                 </label></p>
                 <p><input type="checkbox" id="excel"/>
                 <label class="label">
-                    <%- gettext('excel - разрешено пользоваться Экселем') %>
+                    <%- gettext('excel - allowed to use Microsoft Excel') %>
                 </label></p>
                 <p><input type="checkbox" id="human_assistant"/>
                 <label class="label">
-                    <%- gettext('human_assistant - разрешена помощь другого человека') %>
+                    <%- gettext('human_assistant - allowed to get help from other people') %>
                 </label></p>
                 <p><input type="checkbox" id="absence"/>
                 <label class="label">
-                    <%- gettext('absence - разрешено выходить из поля обзора камеры') %>
+                    <%- gettext('absence - allowed to leave camera scope') %>
                 </label></p>
                 <p><input type="checkbox" id="voices"/>
                 <label class="label">
-                    <%- gettext('voices - разрешены разговоры') %>
+                    <%- gettext('voices - allowed to talk') %>
                 </label></p>
                 <p><input type="checkbox" id="gaze_averted" checked="checked"/>
                 <label class="label">
-                    <%- gettext('gaze_averted - разрешен увод взгляда из области экрана') %>
+                    <%- gettext('gaze_averted - allowed to avert gaze') %>
                 </label></p>
             </div>
         </div>
