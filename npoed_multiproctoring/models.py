@@ -45,5 +45,6 @@ class CourseProctoringService(models.Model):
         # TODO: make sane
         return self.service.name == 'dummy'
 
-    def delete(self, using=None):
-        return super(CourseProctoringService, self).delete(using)
+    @property
+    def name(self):
+        return self.service.name
