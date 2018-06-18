@@ -74,8 +74,8 @@ replaced = {
 
 
 def enable_npoed_multiproctoring(obj):
-    if not settings.FEATURES.get("ENABLE_MULTIPROCTORING", False):
-        return obj
+    #if not settings.FEATURES.get("ENABLE_MULTIPROCTORING", False):
+    #    return obj
     name = obj.__name__
     if name in replaced:
         constructor = replaced.get(name)
