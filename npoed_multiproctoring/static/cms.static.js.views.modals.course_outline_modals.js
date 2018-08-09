@@ -232,7 +232,7 @@ define(['jquery', 'backbone', 'underscore', 'gettext', 'js/views/baseview',
                 xblockInfo: this.model,
                 xblockType: this.options.xblockType,
                 enable_proctored_exam: this.options.enable_proctored_exams,
-                proctoring_services: this.model.attributes.proctoring_services,
+                proctoring_services: ["EXAMUS",];
                 enable_timed_exam: this.options.enable_timed_exams
             }, this.getContext()));
 
